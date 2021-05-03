@@ -12,8 +12,7 @@ const requireAuth = (to, from, next) => {
   let user = projectAuth.currentUser
   if (!user) {
     next({name: 'Login'})
-  } else
-  {
+  } else {
     next()
   }
 }
@@ -23,7 +22,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    beforeEnter: requireAuth()
+    beforeEnter: requireAuth
   },
   {
     path: '/login',
@@ -39,13 +38,13 @@ const routes = [
     path: '/playlist/create',
     name: 'CreatePlaylist',
     component: CreatePlaylist,
-    beforeEnter: requireAuth()
+    beforeEnter: requireAuth
   },
   {
     path: '/playlists/:id',
     name: 'PlaylistDetails',
     component: PlaylistDetails,
-    beforeEnter: requireAuth(),
+    beforeEnter: requireAuth,
     props: true
   }
 ]
