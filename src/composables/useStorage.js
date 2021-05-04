@@ -23,11 +23,12 @@ const useStorage = () => {
     }
 
     const deleteImage = async (path) => {
+        
         const storageRef = projectStorage.ref(path)
-        const imageRef = storageRef.child('images')
 
+        console.log(storageRef)
         try {
-            await imageRef.delete()
+            await storageRef.delete()
         } catch (err) {
             console.log(err.message)
             error.value = err.message
