@@ -62,7 +62,6 @@ export default {
 
       const handleDeleteSong = async (id) => {
         let songs = playlist.value.songs.filter(song=>song.id != id)
-        console.log(songs)
         await updateDoc({songs})
       }
 
